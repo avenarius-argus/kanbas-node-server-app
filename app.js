@@ -5,12 +5,15 @@ import CourseRoutes from "./courses/routes.js";
 import cors from "cors";
 import ModuleRoutes from "./modules/routes.js";
 import "dotenv/config";
+var corsOptions = {
+
+    credentials: true,
+    origin: '*'
+    
+  }
 const app = express()
 app.use(
-    cors({
-      credentials: true,
-      origin: '*'
-    })
+    cors(corsOptions)
 );  
 app.use(express.json());
 
